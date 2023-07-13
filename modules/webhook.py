@@ -34,7 +34,7 @@ class Pusher:
             self.url,
             json={
                 "msgtype": "text",
-                "text": {"content": title+'\n'+content+'\n'+content_html}
+                "text": {"content": title+'\n'+content}
             },
             timeout=10,
         )

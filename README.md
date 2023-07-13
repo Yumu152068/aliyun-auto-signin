@@ -2,7 +2,7 @@
 
 # Aliyun Auto Signin
 
-![GitHub release](https://img.shields.io/github/v/release/ImYrS/aliyun-auto-signin)
+![GitHub release](https://img.shields.io/github/v/release/Yumu152068/aliyun-auto-signin)
 ![wakatime](https://wakatime.com/badge/user/92b8bbab-18e1-4e0c-af6d-082cc16c9d8a/project/0547bf5c-f66c-4798-ab89-96ddb017fef7.svg)
 
 项目用于自动实现阿里云盘的每日签到活动.  
@@ -12,7 +12,7 @@
 
 ----
 
-### [🔥推荐使用 Action 签到🔥](https://github.com/ImYrS/aliyun-auto-signin/blob/main/How-To-Use-Action.md)
+### [🔥推荐使用 Action 签到🔥](https://github.com/Yumu152068/aliyun-auto-signin/blob/main/How-To-Use-Action.md)
 
 0 成本 | 自动更新 | 支持推送 | 无需维护
 </div>
@@ -28,7 +28,7 @@
 
 ## 本地运行
 
-*[GitHub Action 运行](https://github.com/ImYrS/aliyun-auto-signin/blob/main/How-To-Use-Action.md)*
+*[GitHub Action 运行](https://github.com/Yumu152068/aliyun-auto-signin/blob/main/How-To-Use-Action.md)*
 
 1. Clone 本项目到本地或下载 Release 版本
 2. 环境安装
@@ -67,7 +67,7 @@
 
 ```bash
 # auto install pyenv
-curl -s https://raw.githubusercontent.com/ImYrS/aliyun-auto-signin/main/install-pyenv.sh | bash
+curl -s https://raw.githubusercontent.com/Yumu152068/aliyun-auto-signin/main/install-pyenv.sh | bash
 source ~/.bashrc
 
 # install python version
@@ -95,11 +95,11 @@ pyenvs 3.10.12 app.py
 ### 低版本 Python
 
 ~~注意: main 分支仅支持 Python 3.10 及以上版本, 低于 3.10 的版本请移步
-[低版本兼容分支](https://github.com/ImYrS/aliyun-auto-signin/tree/older-python-version)~~
+[低版本兼容分支](https://github.com/Yumu152068/aliyun-auto-signin/tree/older-python-version)~~
 
 **低版本兼容分支已不再维护, 并可能在未来被移除.
 无法使用 `Python 3.10`
-或更高版本请切换至 [Action](https://github.com/ImYrS/aliyun-auto-signin/blob/main/How-To-Use-Action.md) 方案**
+或更高版本请切换至 [Action](https://github.com/Yumu152068/aliyun-auto-signin/blob/main/How-To-Use-Action.md) 方案**
 
 ## Docker 运行
 
@@ -128,7 +128,7 @@ pyenvs 3.10.12 app.py
 
 ### 非官方 Docker
 
-非官方 docker 镜像的讨论以及使用方法[在此查看](https://github.com/ImYrS/aliyun-auto-signin/issues/21)
+非官方 docker 镜像的讨论以及使用方法[在此查看](https://github.com/Yumu152068/aliyun-auto-signin/issues/21)
 
 > 项目不对非官方的 Docker 镜像或其运行方法负责, 也不为其提供支持.
 
@@ -230,15 +230,15 @@ pyenvs 3.10.12 app.py
 
 ### 此项目
 
-- 欢迎在 [Issues](https://github.com/ImYrS/aliyun-auto-signin/issues) 中反馈 Bug
+- 欢迎在 [Issues](https://github.com/Yumu152068/aliyun-auto-signin/issues) 中反馈 Bug
 - 你的 Star :star: 是我维护的动力
 - PRs are welcome
 - Telegram 交流群: [@aliyun_auto_signin](https://t.me/aliyun_auto_signin)
 
 ### 贡献者
 
-<a href="https://github.com/ImYrS/aliyun-auto-signin/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ImYrS/aliyun-auto-signin"  alt=""/>
+<a href="https://github.com/Yumu152068/aliyun-auto-signin/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Yumu152068/aliyun-auto-signin"  alt=""/>
 </a>
 
 ### Special Sponsors

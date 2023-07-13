@@ -11,12 +11,12 @@
 此文为小白不友好教程, 请尽量利用搜索引擎解决问题.  
 **如有提出 Issues 的必要, 请尽量提供报错截图, 错误情况, 以及尝试过的解决方案.**
 
-> [官方教程](https://imyrs.pages.dev/posts/2023/auto-signin-aliyundrive-by-using-github-action/)
+> [官方教程](https://Yumu152068.pages.dev/posts/2023/auto-signin-aliyundrive-by-using-github-action/)
 
 > [非官方小白教程](https://www.52pojie.cn/thread-1757911-1-1.html)
 > by [@陈宇轩](https://www.52pojie.cn/home.php?mod=space&uid=440249) on 52pojie.
 
-提出 Issues 前必看: [Issues 须知](https://github.com/ImYrS/aliyun-auto-signin/issues/29)  
+提出 Issues 前必看: [Issues 须知](https://github.com/Yumu152068/aliyun-auto-signin/issues/29)  
 提问前推荐阅读: [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 ## 准备工作
@@ -32,7 +32,7 @@
 ## 关于自动更新
 
 自动更新指的是自动使用主仓库最新发行版本代码运行, 但无法修改 action 配置文件.
-涉及更新传入参数等配置的更新, 仍需手动操作 (如 [v1.3.4](https://github.com/ImYrS/aliyun-auto-signin/releases/tag/v1.3.4)
+涉及更新传入参数等配置的更新, 仍需手动操作 (如 [v1.3.4](https://github.com/Yumu152068/aliyun-auto-signin/releases/tag/v1.3.4)
 更新).
 
 如未及时更新 action 配置, 不会影响已存在的功能, 但可能会导致新功能无法使用.
@@ -53,7 +53,7 @@
         name: Aliyun Signin
         runs-on: ubuntu-latest
         steps:
-          - uses: ImYrS/aliyun-auto-signin@main
+          - uses: Yumu152068/aliyun-auto-signin@main
             with:
               REFRESH_TOKENS: ${{ secrets.REFRESH_TOKENS }}
               GP_TOKEN: ${{ secrets.GP_TOKEN}}
@@ -82,7 +82,7 @@
 
 3. 修改上方配置中的 `PUSH_TYPES` 参数, 以启用推送功能. 使用 `telegram` 和 `smtp` 渠道在 Action 中可能获得更好体验.
    > 由于配置复杂或渠道 IP 限制等原因, 部分渠道不支持在 Github Action 中使用,
-   详见项目首页的[推送渠道](https://github.com/ImYrS/aliyun-auto-signin/blob/main/README.md#%E6%8E%A8%E9%80%81%E6%B8%A0%E9%81%93)
+   详见项目首页的[推送渠道](https://github.com/Yumu152068/aliyun-auto-signin/blob/main/README.md#%E6%8E%A8%E9%80%81%E6%B8%A0%E9%81%93)
 
 4. 修改上方配置中的 `DO_NOT_REWARD` 参数, 以启用 **仅签到, 不领取奖励** 功能.
    > 开启此功能后, 每次签到时将不会领取奖励, 并在每个月最后一天签到时尝试领取本月所有奖励, 避免浪费.
@@ -135,7 +135,7 @@
 
 ## 查看结果
 
-可以在运行的 Action 运行记录中的 `Run ImYrS/aliyun-auto-signin@main` 末尾查看运行结果
+可以在运行的 Action 运行记录中的 `Run Yumu152068/aliyun-auto-signin@main` 末尾查看运行结果
 
 ## 注意
 
@@ -150,5 +150,5 @@
 ## 其他
 
 这是本人的第一次 Action 尝试, 如有不足之处, 请多多指教.  
-异常请反馈至本项目的 [Issues](https://github.com/ImYrS/aliyun-auto-signin/issues).  
+异常请反馈至本项目的 [Issues](https://github.com/Yumu152068/aliyun-auto-signin/issues).  
 Telegram 交流群: [@aliyun_auto_signin](https://t.me/aliyun_auto_signin)

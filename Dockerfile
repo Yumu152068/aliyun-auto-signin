@@ -11,7 +11,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
 # clone code and install requirements
-RUN mkdir /apps && cd /apps && git clone https://github.com/ImYrS/aliyun-auto-signin.git && cd /apps/aliyun-auto-signin && pip install -r requirements.txt
+RUN mkdir /apps && cd /apps && git clone https://github.com/Yumu152068/aliyun-auto-signin.git && cd /apps/aliyun-auto-signin && pip install -r requirements.txt
 
 # work dir aliyun-auto-signin
 WORKDIR /apps/aliyun-auto-signin

@@ -12,13 +12,13 @@ ENV PYTHONUNBUFFERED=1
 
 # clone code and install requirements
 #RUN mkdir /apps && cd /apps \
-#    && wget https://github.com/ImYrS/aliyun-auto-signin/archive/refs/heads/main.zip && unzip main.zip -d /apps && rm -rf main.zip \
+#    && wget https://github.com/Yumu152068/aliyun-auto-signin/archive/refs/heads/main.zip && unzip main.zip -d /apps && rm -rf main.zip \
 #    && mv /apps/aliyun-auto-signin-main /apps/aliyun-auto-signin \
 #    && cd /apps/aliyun-auto-signin && pip install --no-cache-dir --upgrade -r requirements.txt
 
 RUN mkdir /apps && cd /apps \
     && apk update && apk add git gcc \
-    && git clone https://github.com/ImYrS/aliyun-auto-signin.git && cd /apps/aliyun-auto-signin/ \ 
+    && git clone https://github.com/Yumu152068/aliyun-auto-signin.git && cd /apps/aliyun-auto-signin/ \ 
     && pip install --no-cache-dir --upgrade -r requirements.txt \
     && rm -rf /apps/aliyun-auto-signin/.git && apk del --purge git && apk cache clean
 

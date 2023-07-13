@@ -1,7 +1,7 @@
 """
-    @Author: ImYrS Yang
+    @Author: Yumu152068 Yang
     @Date: 2023/2/10
-    @Copyright: ImYrS Yang
+    @Copyright: Yumu152068 Yang
     @Description:
 """
 
@@ -355,7 +355,7 @@ def get_args() -> argparse.Namespace:
 
     :return: 命令行参数
     """
-    parser = argparse.ArgumentParser(description='阿里云盘自动签到 by @ImYrS')
+    parser = argparse.ArgumentParser(description='阿里云盘自动签到 by @Yumu152068')
 
     parser.add_argument('-a', '--action', help='由 GitHub Actions 调用', action='store_true', default=False)
     parser.add_argument('-d', '--debug', help='调试模式, 会输出更多调试数据', action='store_true', default=False)
@@ -418,12 +418,12 @@ def main():
     if args.action and not environ['GP_TOKEN']:
         text += (
             '\n\n当前 Actions 尚未配置 GP_TOKEN, 请参考 '
-            'https://imyrs.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
+            'https://Yumu152068.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
             ' 尽快处理.'
         )
         text_html += (
             '\n\n当前 Actions 尚未配置 GP_TOKEN, 请参考 '
-            'https://imyrs.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
+            'https://Yumu152068.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
             ' 尽快处理.'
         )
 

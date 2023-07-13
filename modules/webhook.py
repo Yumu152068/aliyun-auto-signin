@@ -20,14 +20,14 @@ class Pusher:
             self,
             title: str,
             content: str,
-            content_html: str,
+            content_text: str,
     ) -> dict:
         """
         发送消息
 
         :param title: 通知标题
         :param content: 消息内容
-        :param content_html: 消息内容, HTML 格式
+        :param content_text: 消息内容, text 格式
         :return:
         """
         request = requests.post(
@@ -35,7 +35,7 @@ class Pusher:
             json={
                 'title': title,
                 'text': content,
-                'html': content_html,
+                'text': content_text,
             },
             timeout=10,
         )
@@ -48,7 +48,7 @@ class Pusher:
 def push(
         config: ConfigObj | dict,
         content: str,
-        content_html: str,
+        content_text: str,
         title: str,
 ) -> bool:
     """
@@ -56,7 +56,7 @@ def push(
 
     :param config: 配置文件, ConfigObj 对象 | dict
     :param content: 推送内容
-    :param content_html: 推送内容, HTML 格式
+    :param content_text: 推送内容, text 格式
     :param title: 标题
     :return:
     """
@@ -66,7 +66,7 @@ def push(
 
     try:
         pusher = Pusher(config['webhook_url'])
-        pusher.send(title, content, content_html)
+        pusher.send(title, content, content_text)
         logging.info('Webhook 推送成功')
     except Exception as e:
         logging.error(f'Webhook 推送失败, 错误信息: {e}')

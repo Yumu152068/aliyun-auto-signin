@@ -1,0 +1,163 @@
+name: Aliyun Signin
+author: ImYrS
+description: 'AliyunDrive signin automatically'
+
+inputs:
+  REFRESH_TOKENS:
+    description: 'AliyunDrive refresh tokens'
+    required: true
+
+  GP_TOKEN:
+    description: 'Github personal access token'
+    required: false
+    default: ''
+
+  PUSH_TYPES:
+    description: 'Push types for signin result'
+    required: false
+    default: ''
+
+  DO_NOT_REWARD:
+    description: 'Do not reward'
+    required: false
+    default: 'false'
+
+  SERVERCHAN_SEND_KEY:
+    description: 'ServerChan send key'
+    required: false
+    default: ''
+
+  TELEGRAM_BOT_TOKEN:
+    description: 'Telegram bot token'
+    required: false
+    default: ''
+
+  TELEGRAM_CHAT_ID:
+    description: 'Telegram chat id'
+    required: false
+    default: ''
+
+  PUSHPLUS_TOKEN:
+    description: 'PushPlus token'
+    required: false
+    default: ''
+
+  PUSHPLUS_TOPIC:
+    description: 'PushPlus topic'
+    required: false
+    default: ''
+
+  SMTP_HOST:
+    description: 'SMTP host'
+    required: false
+    default: ''
+
+  SMTP_PORT:
+    description: 'SMTP port'
+    required: false
+    default: ''
+
+  SMTP_TLS:
+    description: 'SMTP TLS'
+    required: false
+    default: 'true'
+
+  SMTP_USER:
+    description: 'SMTP user'
+    required: false
+    default: ''
+
+  SMTP_PASSWORD:
+    description: 'SMTP password'
+    required: false
+    default: ''
+
+  SMTP_SENDER:
+    description: 'SMTP sender'
+    required: false
+    default: ''
+
+  SMTP_RECEIVER:
+    description: 'SMTP receiver'
+    required: false
+    default: ''
+
+  FEISHU_WEBHOOK:
+    description: 'Feishu webhook'
+    required: false
+    default: ''
+
+  WEBHOOK_URL:
+    description: 'Webhook url'
+    required: false
+    default: ''
+
+  CQHTTP_ENDPOINT:
+    description: 'go-cqhttp endpoint'
+    required: false
+    default: ''
+
+  CQHTTP_USER_ID:
+    description: 'go-cqhttp user id'
+    required: false
+    default: ''
+
+  CQHTTP_ACCESS_TOKEN:
+    description: 'go-cqhttp access token'
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+    - id: version
+      uses: pozetroninc/github-action-get-latest-release@master
+      with:
+        repository: ImYrS/aliyun-auto-signin
+        excludes: prerelease, draft
+        token: ${{ inputs.GP_TOKEN }}
+    - name: Download
+      shell: bash
+      run: |
+        wget https://github.com/ImYrS/aliyun-auto-signin/archive/refs/tags/${{ steps.version.outputs.release }}.zip -O release.zip
+        rm -rf release
+        unzip release.zip -d release
+        rm release.zip
+    - name: Run
+      shell: bash
+      run: |
+        cd release
+        cd $(ls -dt */|head -1 )
+        pip install -r requirements.txt
+        python app.py -a
+      env:
+        REFRESH_TOKENS: ${{ inputs.REFRESH_TOKENS }}
+        GP_TOKEN: ${{ inputs.GP_TOKEN }}
+        GITHUB_REPOS: ${{ github.repository }}
+        PUSH_TYPES: ${{ inputs.PUSH_TYPES }}
+        DO_NOT_REWARD: ${{ inputs.DO_NOT_REWARD }}
+        SERVERCHAN_SEND_KEY: ${{ inputs.SERVERCHAN_SEND_KEY }}
+        TELEGRAM_BOT_TOKEN: ${{ inputs.TELEGRAM_BOT_TOKEN }}
+        TELEGRAM_CHAT_ID: ${{ inputs.TELEGRAM_CHAT_ID }}
+        PUSHPLUS_TOKEN: ${{ inputs.PUSHPLUS_TOKEN }}
+        PUSHPLUS_TOPIC: ${{ inputs.PUSHPLUS_TOPIC }}
+        SMTP_HOST: ${{ inputs.SMTP_HOST }}
+        SMTP_PORT: ${{ inputs.SMTP_PORT }}
+        SMTP_TLS: ${{ inputs.SMTP_TLS }}
+        SMTP_USER: ${{ inputs.SMTP_USER }}
+        SMTP_PASSWORD: ${{ inputs.SMTP_PASSWORD }}
+        SMTP_SENDER: ${{ inputs.SMTP_SENDER }}
+        SMTP_RECEIVER: ${{ inputs.SMTP_RECEIVER }}
+        FEISHU_WEBHOOK: ${{ inputs.FEISHU_WEBHOOK }}
+        WEBHOOK_URL: ${{ inputs.WEBHOOK_URL }}
+        CQHTTP_ENDPOINT: ${{ inputs.CQHTTP_ENDPOINT }}
+        CQHTTP_USER_ID: ${{ inputs.CQHTTP_USER_ID }}
+        CQHTTP_ACCESS_TOKEN: ${{ inputs.CQHTTP_ACCESS_TOKEN }}
+
+branding:
+    icon: 'check-circle'
+    color: 'orange'

@@ -1,7 +1,7 @@
 """
-    @Author: Yumu152068
+    @Author: ImYrS Yang
     @Date: 2023/3/31
-    @Copyright: Yumu152068
+    @Copyright: ImYrS Yang
     @Description: 
 """
 
@@ -33,8 +33,9 @@ class Pusher:
         request = requests.post(
             self.url,
             json={
-                "msgtype": "text",
-                "text": {"content": title+'\n'+content}
+                'title': title,
+                'text': content,
+                'html': content_html,
             },
             timeout=10,
         )

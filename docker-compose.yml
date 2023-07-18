@@ -1,9 +1,0 @@
-version: '3'
-services:
-  aliyun-auto-signin:
-    image: aliyun-auto-signin
-    volumes:
-      - ./config.ini:/apps/aliyun-auto-signin/config.ini
-    environment:
-      - CRON_SCHEDULE=0 7 * * *
-

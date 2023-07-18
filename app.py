@@ -15,7 +15,7 @@ import time
 from configobj import ConfigObj
 import requests
 
-from modules import cqhttp, dingtalk, feishu, pushdeer, pushplus, serverchan, smtp, telegram, webhook
+from modules import webhook
 import github
 
 
@@ -271,14 +271,6 @@ def push(
     ]
 
     for push_type, pusher in {
-        'go-cqhttp': cqhttp,
-        'dingtalk': dingtalk,
-        'feishu': feishu,
-        'pushdeer': pushdeer,
-        'pushplus': pushplus,
-        'serverchan': serverchan,
-        'smtp': smtp,
-        'telegram': telegram,
         'webhook': webhook,
     }.items():
         if push_type in configured_push_types:
@@ -324,25 +316,6 @@ def get_config_from_env() -> Optional[dict]:
         return {
             'refresh_tokens': refresh_tokens.split(','),
             'push_types': push_types.split(','),
-            'serverchan_send_key': environ['SERVERCHAN_SEND_KEY'],
-            'telegram_endpoint': 'https://api.telegram.org',
-            'telegram_bot_token': environ['TELEGRAM_BOT_TOKEN'],
-            'telegram_chat_id': environ['TELEGRAM_CHAT_ID'],
-            'telegram_proxy': None,
-            'pushplus_token': environ['PUSHPLUS_TOKEN'],
-            'pushplus_topic': environ['PUSHPLUS_TOPIC'],
-            'smtp_host': environ['SMTP_HOST'],
-            'smtp_port': environ['SMTP_PORT'],
-            'smtp_tls': environ['SMTP_TLS'],
-            'smtp_user': environ['SMTP_USER'],
-            'smtp_password': environ['SMTP_PASSWORD'],
-            'smtp_sender': environ['SMTP_SENDER'],
-            'smtp_receiver': environ['SMTP_RECEIVER'],
-            'feishu_webhook': environ['FEISHU_WEBHOOK'],
-            'webhook_url': environ['WEBHOOK_URL'],
-            'cqhttp_endpoint': environ['CQHTTP_ENDPOINT'],
-            'cqhttp_user_id': environ['CQHTTP_USER_ID'],
-            'cqhttp_access_token': environ['CQHTTP_ACCESS_TOKEN'],
         }
     except KeyError as e:
         logging.error(f'环境变量 {e} 缺失.')

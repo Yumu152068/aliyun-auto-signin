@@ -1,6 +1,6 @@
 <div align=center>
 
-![aliyun-auto-signin](https://socialify.git.ci/Yumu152068/aliyun-auto-signin/image?font=Inter&forks=1&issues=1&language=1&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
+# Aliyun Auto Signin
 
 ![GitHub release](https://img.shields.io/github/v/release/Yumu152068/aliyun-auto-signin)
 ![wakatime](https://wakatime.com/badge/user/92b8bbab-18e1-4e0c-af6d-082cc16c9d8a/project/0547bf5c-f66c-4798-ab89-96ddb017fef7.svg)
@@ -12,22 +12,7 @@
 
 ----
 
-# 🪅 AliyunDrive Pro 🪅
-
-### 目前唯一*支持八月新版签到任务的阿里云盘签到
-
-免费 | 高速 | Web UI | 多账户独立配置
-
-#### [立即使用](https://aliyundrive.pro)
-
-**个人隐私就是底线!**
-[隐私政策](https://aliyundrive.pro/public/privacy) 与 [服务条款](https://aliyundrive.pro/public/tos)
-
-*在我能找到的范围里
-
-----
-
-### [使用 Action 签到](https://github.com/Yumu152068/aliyun-auto-signin/blob/main/How-To-Use-Action.md)
+### [🔥推荐使用 Action 签到🔥](https://github.com/Yumu152068/aliyun-auto-signin/blob/main/How-To-Use-Action.md)
 
 0 成本 | 自动更新 | 支持推送 | 无需维护
 </div>
@@ -57,7 +42,7 @@
         ```
 3. 修改配置文件
     1. 复制 `example.config.ini` 为 `config.ini`
-    2. 在配置文件中填入你的阿里云盘 `refresh token`, 可使用[此工具](https://qr.aliyundrive.pro)获取. 多账户同时签到使用英文逗号分隔
+    2. 在配置文件中填入你的阿里云盘 `refresh token`, 多账户同时签到使用英文逗号分隔
     3. 按需填写推送配置参数 `push_types`, 支持的推送渠道见下方, 不需要推送请留空
     4. 保存配置文件
 4. 运行并查看是否成功签到

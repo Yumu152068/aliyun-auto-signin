@@ -1,7 +1,7 @@
 """
-    @Author: Yumu152068
+    @Author: Yumu152068 Yang
     @Date: 2023/2/10
-    @Copyright: Yumu152068
+    @Copyright: Yumu152068 Yang
     @Description:
 """
 
@@ -355,7 +355,7 @@ def get_args() -> argparse.Namespace:
 
     :return: 命令行参数
     """
-    parser = argparse.ArgumentParser(description='阿里云盘自动签到 by @ImYrS')
+    parser = argparse.ArgumentParser(description='阿里云盘自动签到 by @Yumu152068')
 
     parser.add_argument('-a', '--action', help='由 GitHub Actions 调用', action='store_true', default=False)
     parser.add_argument('-d', '--debug', help='调试模式, 会输出更多调试数据', action='store_true', default=False)
@@ -418,31 +418,14 @@ def main():
     if args.action and not environ['GP_TOKEN']:
         text += (
             '\n\n当前 Actions 尚未配置 GP_TOKEN, 请参考 '
-            'https://imyrs.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
+            'https://Yumu152068.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
             ' 尽快处理.'
         )
         text_html += (
             '\n\n当前 Actions 尚未配置 GP_TOKEN, 请参考 '
-            'https://imyrs.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
+            'https://Yumu152068.cn/posts/2023/auto-signin-aliyundrive-by-using-github-action/#github-personal-token'
             ' 尽快处理.'
         )
-
-    new_platform = (
-        '\n\n[通知] 新一代签到平台发布!\n\n'
-        '经过一个月的测试, 现在向你推荐由原班人马开发的新阿里云盘签到平台!\n\n'
-        '官网: https://aliyundrive.pro\n\n'
-        '- 免费, 快速, 可视化, 高可用性\n'
-        '- 支持最新版签到任务, 可自动完成上传文件, 观看视频等任务\n'
-        '- 每天推送太吵了? 支持仅签到失败时才推送\n'
-        '- 可同时绑定多个账号, 分别配置签到参数, 可视化配置更轻松\n'
-        '- 每天定时签到怕风控? 可以配置每天随机事件签到!\n'
-        '- 每周自动参加战队 PK, 帮你领取补签卡\n'
-        '- 害怕隐私风险? 可在登陆页面查看完整的隐私条款, 个人隐私是底线!\n\n'
-        '更多问题请在 GitHub issue 中提出, 或加入交流群 https://t.me/aliyun_auto_signin'
-    )
-
-    text += new_platform
-    text_html += new_platform
 
     push(config, text, text_html, '阿里云盘签到')
 

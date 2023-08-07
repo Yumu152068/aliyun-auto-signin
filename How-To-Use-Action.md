@@ -1,16 +1,3 @@
-# 🪅 AliyunDrive Pro 🪅
-
-### 目前唯一*支持八月新版签到任务的阿里云盘签到
-
-免费 | 高速 | Web UI | 多账户独立配置
-
-#### [立即使用](https://aliyundrive.pro)
-
-**个人隐私就是底线!**
-[隐私政策](https://aliyundrive.pro/public/privacy) 与 [服务条款](https://aliyundrive.pro/public/tos)
-
-----
-
 # Action 使用指南
 
 ## 特性
@@ -105,8 +92,7 @@
 在仓库的 `Settings` -> `Secrets and Variables` -> `Actions` 中点击 `New repository secret` 按照推送需要添加 Secrets.  
 添加时 `Name` 为下方全大写的配置 key, `Secret` 为对应的值, 均不需要引号.
 
-- `REFRESH_TOKENS` **[必选]** *阿里云盘 refresh token, 可使用[此工具](https://qr.aliyundrive.pro)获取.
-  多账户使用英文逗号 (,) 分隔.*
+- `REFRESH_TOKENS` **[必选]** *阿里云盘 refresh token, 多账户使用英文逗号 (,) 分隔*
 - `GP_TOKEN` [推荐] 在 Action 中运行时更新 refresh token
 
 > **获取 GP_TOKEN 的方法**
